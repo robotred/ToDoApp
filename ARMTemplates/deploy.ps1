@@ -1,4 +1,4 @@
-﻿Param(
+Param(
 	[string] $ResourceGroupSuffix = "",
 	[string] $SlotName = "Staging",
 	[string] $TemplateFile = "ProdAndStage.json",
@@ -108,6 +108,8 @@ else
     	Write-Host $Error[0] -ForegroundColor Red 
     	exit 1 
 	} 
+	
+	Write-Host "Created resource..." -ForegroundColor Green 
 
 	Remove-Item .\temp.json | Out-Null
 
